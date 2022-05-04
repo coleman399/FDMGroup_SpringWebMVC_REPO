@@ -1,12 +1,11 @@
 package com.fdmgroup.spring_web_mvc.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -69,8 +68,7 @@ public class RegistrationController {
 
     @RequestMapping(value = "/processCalculate", method = RequestMethod.POST)
     public String goToProcessCalculate(@RequestParam int num1, @RequestParam int num2) {
-        int result = num1 + num2;
-
+        int result = registrationService.calculate(num1, num2);
         System.out.println("Result : " + result);
         return "index";
 
@@ -90,6 +88,11 @@ public class RegistrationController {
         model.addAttribute("language", lang);
         model.addAttribute("version", id);
         return "book-info";
+    }
+
+    @PostMapping(value = "/googleSearch")
+    public String googleSearch(@RequestParam String search_criteria) {
+        return "redirect:https://www.google.com/search?q=" + search_criteria;
     }
 
 }

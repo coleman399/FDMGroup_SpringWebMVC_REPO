@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<<html xmlns:th="http:www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8" />
@@ -18,21 +18,10 @@
 
 <body>
     <div class="container-fluid">
-        <h1>Welcome to index page</h1>
-        <a href="register">Register</a><br>
-        <a href="forwarding">forwarding</a><br>
-        <a href="goToGoogle">goToGoogle</a>
-        <br>
-        <br>
-        <form action="/processCalculate" method="post">
-            Number1 : <input type="number" name="num1" /><br>
-            Number2 : <input type="number" name="num2" /><br>
-            <br>
-            <input type="submit" name="Calculate">
-        </form>
+        <h1>Book Info</h1>
 
-        <a href="/find/en/1">Book in English</a><br>
-        <a href="/find/fr/1">Book in French</a><br>
+        Language: <span th:text="${language}"></span>
+        Version: <span th:text="${version}"></span>
     </div>
 </body>
 

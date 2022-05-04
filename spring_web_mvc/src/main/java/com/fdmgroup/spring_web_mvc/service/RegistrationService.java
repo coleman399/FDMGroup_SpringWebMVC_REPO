@@ -1,4 +1,4 @@
-package com.fdmgroup.spring_web_mvc.controller;
+package com.fdmgroup.spring_web_mvc.service;
 
 import org.springframework.stereotype.Service;
 

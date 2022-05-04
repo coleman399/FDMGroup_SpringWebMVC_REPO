@@ -1,9 +1,13 @@
 package com.fdmgroup.spring_web_mvc.model;
 
+import java.io.Serializable;
+
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class User {
+public class User implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
     private String username;
     private String password;
     
@@ -30,5 +34,11 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "User [password=" + password + ", username=" + username + "]";
+    }
+
 
 }

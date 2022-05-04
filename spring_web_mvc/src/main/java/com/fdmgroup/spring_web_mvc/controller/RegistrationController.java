@@ -1,5 +1,7 @@
 package com.fdmgroup.spring_web_mvc.controller;
 
+import com.fdmgroup.spring_web_mvc.service.RegistrationService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +30,7 @@ public class RegistrationController {
     @RequestMapping(value = "/forwarding", method = RequestMethod.GET)
     public String preProcessRequest() {
         System.out.println("Processing 1...");
-        return "forward:";
+        return "forward:/additionalProcessing";
     }
 
     @RequestMapping(value = "/additionalProcessing", method = RequestMethod.GET)
@@ -49,20 +51,20 @@ public class RegistrationController {
     // HttpServletResponse response throws IOException
     // @RequestMapping(value = "/processCalculate", method = RequestMethod.GET)
     // public String goToProcessCalculate(HttpServletRequest request) {
-    //     int number1 = Integer.parseInt(request.getParameter("num1"));
-    //     int number2 = Integer.parseInt(request.getParameter("num2"));
-    //     int result = number1 + number2;
+    // int number1 = Integer.parseInt(request.getParameter("num1"));
+    // int number2 = Integer.parseInt(request.getParameter("num2"));
+    // int result = number1 + number2;
 
-    //     System.out.println("Result : " + result);
-    //     return "index";
+    // System.out.println("Result : " + result);
+    // return "index";
 
-    //     // the syntax need to print the page
+    // // the syntax need to print the page
 
-    //     // PrintWriter out = response.getWriter();
-    //     // out.println("<html>");
-    //     // out.println("<head><title>Result Page</title></head>");
-    //     // out.println("<body><p>" + result + "</p></body>");
-    //     // out.println("</html>");
+    // // PrintWriter out = response.getWriter();
+    // // out.println("<html>");
+    // // out.println("<head><title>Result Page</title></head>");
+    // // out.println("<body><p>" + result + "</p></body>");
+    // // out.println("</html>");
 
     // }
 

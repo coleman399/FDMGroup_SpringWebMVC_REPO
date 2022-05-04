@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http:www.thymeleaf.org">
+
+</html>
 
 <head>
     <meta charset="UTF-8" />
@@ -27,27 +29,23 @@
         <form action="/processCalculate" method="post">
             Number1 : <input type="number" name="num1" /><br>
             Number2 : <input type="number" name="num2" /><br>
-            <br>
             <input type="submit" value="Calculate">
         </form>
-
+        <br>
         <a href="/find/en/1">Book in English</a><br>
         <a href="/find/fr/1">Book in French</a><br>
-
         <br>
-        <br>
-
         <h3>Google Search</h3>
         <form action="/googleSearch" method="post">
-            Search: <input type="text" name="search_criteria"/>
+            Search: <input type="text" name="search_criteria" />
             <input type="submit" value="Search" />
         </form>
-
         <br>
-        <br>
-
         <a href="/login">Login</a><br>
         <a href="/logout">Logout</a>
+        <hr>
+        Welcome: <span th:text="${myUserName}"></span><br>
+        Welcome: <span th:text="${session.LoginUsername}"></span>
     </div>
 </body>
 

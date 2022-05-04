@@ -1,12 +1,6 @@
 package com.fdmgroup.spring_web_mvc.controller;
 
-
-
-import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class RegistrationController {
-    
+
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String goToRegisterPage() {
         return "registration";
@@ -40,10 +34,11 @@ public class RegistrationController {
         return "redirect:https://www.google.com";
     }
 
-    // by adding the following verbiage to methods it is possible print webpages <<<<<<<<< considered "old school"
-    // HttpServletResponse response throws IOException 
+    // by adding the following verbiage to methods it is possible print webpages
+    // <<<<<<<<< considered "old school"
+    // HttpServletResponse response throws IOException
     @RequestMapping(value = "/processCalculate", method = RequestMethod.GET)
-    public String goToProcessCalculate(HttpServletRequest request) { 
+    public String goToProcessCalculate(HttpServletRequest request) {
         int number1 = Integer.parseInt(request.getParameter("num1"));
         int number2 = Integer.parseInt(request.getParameter("num2"));
         int result = number1 + number2;
